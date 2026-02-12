@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Do You Really Know Bawin?</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Full Screen Warning -->
+    <div id="fullscreen-warning" class="active">
+        <div class="warning-overlay">
+            <div class="warning-card">
+                <div class="warning-icon">
+                    <i class="fas fa-expand-alt"></i>
+                </div>
+                
+                <div class="warning-text">
+                    <h2><span class="warning-heart">💝</span> Full Screen Required</h2>
+                    <p>For the best experience, please view this page in full screen mode</p>
+                </div>
+                
+                <div class="warning-action">
+                    <button id="proceed-btn" class="proceed-btn">
+                        <span>I'm in Full Screen!</span>
+                        <i class="fas fa-heart"></i>
+                    </button>
+                </div>
+                
+                <div class="warning-footer">
+                    <i class="fas fa-info-circle"></i>
+                    <span>Full screen allows for a dynamic experience between me and you. 💖</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Container (Initially Hidden) -->
+    <div class="container">
+        <!-- 0. Start Screen -->
+        <section id="start-screen" class="screen">
+            <div class="start-content">
+                <div class="logo">💝</div>
+                <h1>Do You Really Know <span class="name-highlight">Bawin?</span></h1>
+                <p class="subtitle">A journey through my heart and memories</p>
+                <button id="start-btn" class="main-btn">
+                    <span>Begin the Discovery</span>
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+                <div class="start-hint">
+                    <i class="fas fa-heart"></i>
+                    <span>Made with care for you</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- 1. Quiz Screen -->
+        <section id="quiz-screen" class="screen">
+            <div class="quiz-header">
+                <div class="quiz-progress">
+                    <div class="progress-bar">
+                        <div class="progress-fill"></div>
+                    </div>
+                    <div class="progress-text">
+                        Question <span id="current-q">1</span> of 8
+                    </div>
+                </div>
+            </div>
+            
+            <div class="quiz-content">
+                <h2 id="question-text" class="question-title"></h2>
+                
+                <div class="options-container" id="options-container">
+                    <!-- Options injected here -->
+                </div>
+                
+                <div class="feedback-container">
+                    <div class="feedback-box" id="feedback-box">
+                        <p id="feedback-text"></p>
+                    </div>
+                </div>
+                
+                <!-- Baby Picture Overlay -->
+                <div class="baby-overlay" id="baby-overlay">
+                    <div class="baby-fly-container" id="baby-fly-container">
+                        <div class="baby-fly-content">
+                            <img id="baby-pic" src="" alt="Baby Bawin">
+                            <div class="baby-fly-caption" id="baby-fly-caption"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Analyse Screen (Quiz Complete) -->
+        <section id="complete-screen" class="screen">
+            <div class="complete-content">
+                <div class="complete-icon">🎉</div>
+                <h2>All Questions Completed!</h2>
+                <p class="complete-message">
+                    You've journeyed through my memories and heart.<br>
+                    Now it's time to see what it all means.
+                </p>
+                <button id="analyse-btn" class="analyse-btn">
+                    <span>Analyse Results</span>
+                    <i class="fas fa-chart-line"></i>
+                </button>
+                <div class="complete-hint">
+                    <i class="fas fa-heart"></i>
+                    <span>One more step...</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Pivot Screen (Calculating) -->
+        <section id="pivot-screen" class="screen">
+            <div class="pivot-content">
+                <div class="pivot-loader">
+                    <div class="loader-spinner"></div>
+                    <p class="loader-text">Analyzing your answers...</p>
+                </div>
+                
+                <div class="pivot-messages">
+                    <div class="pivot-message" id="pivot-1">
+                        <i class="fas fa-heartbeat"></i>
+                        <p>Calculating compatibility...</p>
+                    </div>
+                    <div class="pivot-message" id="pivot-2">
+                        <i class="fas fa-brain"></i>
+                        <p>But this test isn't about what you know.</p>
+                    </div>
+                    <div class="pivot-message highlight" id="pivot-3">
+                        <i class="fas fa-heart"></i>
+                        <p>It's about how I feel about you.</p>
+                    </div>
+                </div>
+                
+                <button id="reveal-btn" class="reveal-btn">
+                    <span>Discover the Truth</span>
+                    <i class="fas fa-gem"></i>
+                </button>
+            </div>
+        </section>
+
+        <!-- 4. Final Ask Screen - Pure Buttons + Dialogue Box -->
+        <section id="final-screen" class="screen">
+            <div class="final-content">
+                <div class="final-header">
+                    <h2>For You, <span class="her-name">Onesha</span></h2>
+                    <div class="heart-decoration">
+                        <i class="fas fa-heart"></i>
+                        <i class="fas fa-heart"></i>
+                        <i class="fas fa-heart"></i>
+                    </div>
+                </div>
+                
+                <div class="final-message">
+                    <p class="final-lead">Every question was leading here...</p>
+                    <p class="final-question">Will you be my Valentine?</p>
+                </div>
+                
+                <div class="final-buttons">
+                    <button id="yes-btn" class="yes-btn-final">
+                        <div class="yes-circle">
+                            <span>YES</span>
+                        </div>
+                    </button>
+                    
+                    <button id="no-btn" class="no-btn-final">
+                        <div class="no-circle">
+                            <span id="no-text">No</span>
+                        </div>
+                    </button>
+                </div>
+
+                <!-- Dialogue Box for hints -->
+                <div id="final-dialogue" class="final-dialogue">
+                    I dare you to click 'No'
+                </div>
+                
+                <div class="final-note">
+                    <i class="fas fa-star"></i>
+                    <span>Your answer will make my day</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Victory Screen - FULLY SCROLLABLE (visible scrollbar) -->
+        <section id="victory-screen" class="screen">
+            <div class="victory-content">
+                <div class="confetti"></div>
+                
+                <div class="victory-header">
+                    <h1>You Said YES! 💝</h1>
+                    <p class="victory-subtitle">Best decision ever</p>
+                </div>
+                
+                <div class="baby-gallery">
+                    <h3><i class="fas fa-images"></i> The Bawin Archives</h3>
+                    <div class="gallery-grid" id="baby-collage">
+                        <!-- Baby pictures injected here -->
+                    </div>
+                    <p class="gallery-note">A glimpse into my childhood</p>
+                </div>
+                
+                <div class="victory-next">
+                    <p class="next-prompt">Now let's plan our perfect Valentine's Day</p>
+                    <button id="plan-date-btn" class="date-plan-btn">
+                        <span>Plan Our Date</span>
+                        <i class="fas fa-heart-circle-plus"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. Date Planner Screen - FULLY SCROLLABLE (visible scrollbar) -->
+        <section id="date-planner-screen" class="screen">
+            <div class="planner-content">
+                <div class="planner-header">
+                    <h2>Design Our Perfect Valentine's</h2>
+                    <p>Choose your preferences and I'll create the perfect day</p>
+                </div>
+                
+                <div class="planner-steps-all">
+                    <!-- Step 1: Vibe -->
+                    <div class="planner-step">
+                        <h3><span class="step-number">1</span> Choose the Vibe</h3>
+                        <div class="step-options" id="vibe-options">
+                            <div class="planner-option" data-value="cozy">
+                                <i class="fas fa-book-open"></i>
+                                <span>Cozy & Chatty</span>
+                            </div>
+                            <div class="planner-option" data-value="active">
+                                <i class="fas fa-hiking"></i>
+                                <span>Active & Fun</span>
+                            </div>
+                            <div class="planner-option" data-value="romantic">
+                                <i class="fas fa-star"></i>
+                                <span>Romantic & Classic</span>
+                            </div>
+                            <div class="planner-option" data-value="surprise">
+                                <i class="fas fa-gift"></i>
+                                <span>Surprise Me</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 2: Fuel -->
+                    <div class="planner-step">
+                        <h3><span class="step-number">2</span> Choose the Fuel</h3>
+                        <div class="step-options" id="fuel-options">
+                            <div class="planner-option" data-value="sweet">
+                                <i class="fas fa-cookie-bite"></i>
+                                <span>Sweet Treats</span>
+                            </div>
+                            <div class="planner-option" data-value="savory">
+                                <i class="fas fa-cheese"></i>
+                                <span>Savory Bites</span>
+                            </div>
+                            <div class="planner-option" data-value="fancy">
+                                <i class="fas fa-wine-glass-alt"></i>
+                                <span>Fancy Dinner</span>
+                            </div>
+                            <div class="planner-option" data-value="coffee">
+                                <i class="fas fa-mug-hot"></i>
+                                <span>Coffee & Chat</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 3: Style -->
+                    <div class="planner-step">
+                        <h3><span class="step-number">3</span> Choose the Style</h3>
+                        <div class="step-options" id="style-options">
+                            <div class="planner-option" data-value="you">
+                                <i class="fas fa-map"></i>
+                                <span>You Plan It</span>
+                            </div>
+                            <div class="planner-option" data-value="together">
+                                <i class="fas fa-handshake"></i>
+                                <span>We Plan Together</span>
+                            </div>
+                            <div class="planner-option" data-value="go">
+                                <i class="fas fa-wind"></i>
+                                <span>Go With the Flow</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="planner-actions">
+                    <button id="generate-date-btn" class="generate-btn" disabled>
+                        <span>Create Our Date</span>
+                        <i class="fas fa-magic"></i>
+                    </button>
+                </div>
+                
+                <div id="date-result" class="date-result">
+                    <!-- Date plan will appear here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. Final Love Message -->
+        <section id="love-screen" class="screen">
+            <div class="love-content">
+                <div class="love-header">
+                    <div class="love-hearts">
+                        <i class="fas fa-heart"></i>
+                        <i class="fas fa-heart"></i>
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h2>One Last Message...</h2>
+                </div>
+                
+                <div class="love-message">
+                    <div class="message-container">
+                        <p class="love-line" id="love-line-1">Thank you for saying yes.</p>
+                        <p class="love-line" id="love-line-2">Thank you for taking this journey with me.</p>
+                        <p class="love-line" id="love-line-3">Thank you for being you.</p>
+                        
+                        <div class="special-message">
+                            <p class="highlight-message">It was all to show you how special you are to me.</p>
+                        </div>
+                        
+                        <div class="final-words">
+                            <span class="final-word" id="word-i">I</span>
+                            <span class="final-word" id="word-love">LOVE</span>
+                            <span class="final-word" id="word-you">YOU</span>
+                        </div>
+                    </div>
+                    
+                    <div class="love-signature">
+                        <div class="signature-line"></div>
+                        <p class="signature-date">Bawin | Valentine's Day 2026</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </div>
+
+    <!-- Audio -->
+    <audio id="click-sound" preload="auto" src="https://assets.mixkit.co/sfx/preview/mixkit-select-click-1109.mp3"></audio>
+    <audio id="success-sound" preload="auto" src="https://assets.mixkit.co/sfx/preview/mixkit-winning-chimes-2015.mp3"></audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
